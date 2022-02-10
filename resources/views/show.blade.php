@@ -7,7 +7,7 @@
         <div class="card-body">
             <h2> {{$comic["title"]}}</h2>
             <p class="card-text">{{$comic["sale_date"]}}</p>
-            <button type="button" class="btn btn-primary mx-2">RETURN</button>
+            <a href="{{route("comics.index", $comic->id)}}"><button type="button" class="btn btn-primary mx-2">RETURN</button></a>
         </div>
     </div>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('pageContent')
 <h1 class="text-center font-weight-bold my-2">Comics Collection
-    <button type="button" class="btn btn-primary btn-lg">ADD COMICS</button>
+    <a href="{{route("comics.create")}}"><button type="button" class="btn btn-primary btn-lg">ADD COMICS</button></a>
 </h1>
 
 <div class="container d-flex align-items-center justify-content-center flex-wrap my-2">
@@ -13,7 +13,8 @@
         <div class="card-body">
             <h2> {{$item["title"]}}</h2>
             <p class="card-text">{{$item["sale_date"]}}</p>
-            <button type="button" class="btn btn-primary">CUSTOM</button>
+           <a href="{{route("comics.show", $item->id)}}"><button type="button" class="btn btn-success">SEE MORE</button></a>
+            <a href="{{route("comics.edit", $item->id)}}"><button type="button" class="btn btn-primary">CUSTOM</button></a>
             <button type="button" class="btn btn-danger mx-2">DELETE</button>
         </div>
     </div>
