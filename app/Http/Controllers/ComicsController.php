@@ -83,7 +83,7 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $newComic)
+    public function update(Request $request, Comic $comic)
     {
         $data = $request->all();
 
@@ -97,9 +97,9 @@ class ComicsController extends Controller
             "price" => "required|numeric|max:50",
         ]);
 
-        $newComic->update($data);
+        $comic->update($data);
 
-        return redirect()->route('comics.show', $newComic->id);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
